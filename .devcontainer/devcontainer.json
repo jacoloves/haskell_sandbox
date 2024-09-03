@@ -1,0 +1,21 @@
+{
+    "name": "Haskell Development Container",
+    "context": "..",
+    "dockerFile": "../Dockerfile",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [ 
+        "justusadam.language-haskell"
+    ],
+    "workspaceFolder": "/workspace",
+    "runArgs": [
+        "--init",
+        "--cap-add=SYS_PTRACE",
+        "--security-opt",
+        "seccomp=unconfined"
+    ],
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ]
+}
